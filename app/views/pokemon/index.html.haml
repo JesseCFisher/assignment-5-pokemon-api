@@ -1,7 +1,18 @@
-%h1 Pokemon#index
+%h1 Pokemon index
+
+= @pokemon_store.index.first
+
+= link_to "Prev", @pokemon_store.previous_path
+
+= link_to "Next", @pokemon_store.next_path
+
 - @pokemon_store.index.each do |pokemon|
-  %h2= pokemon['name'].capitalize
+  %h2
+    = pokemon['url'].gsub('v2','').match(/\d+/)
+    = pokemon['name'].capitalize
 
--# = link_to "Prev", @json["previous"]
+- if @pokemon_store.previous_path
+  = link_to "Prev", @pokemon_store.previous_path
 
--# = link_to "Next", @json["next"]
+- if @pokemon_store.next_path
+  = link_to "Next", @pokemon_store.next_path

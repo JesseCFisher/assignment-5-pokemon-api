@@ -3,7 +3,7 @@ class PokemonController < ApplicationController
     @offset = params['offset']
     @limit  = params['limit']
 
-    @pokemon_store = PokemonStore.new
+    @pokemon_store = PokemonStore.new(@offset, @limit)
     @pokemons = @pokemon_store.index
   end
 end
