@@ -33,9 +33,6 @@ class Pokemon
     json["previous"].gsub(/.*\?/,'./?')
   end
 
-  def json_parse
-
-  end
 end
 
 

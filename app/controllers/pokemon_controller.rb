@@ -10,6 +10,7 @@ class PokemonController < ApplicationController
   def show
     @id = params[:id]
     @pokemon = Pokemon.new(@id)
+    @json = @pokemon.json
   end
 
 end

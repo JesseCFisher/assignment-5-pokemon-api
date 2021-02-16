@@ -9,3 +9,13 @@
     %li
       = ability["ability"]["name"]
 
+%h2 Parsed JSON
+
+- @json.keys.each do |key|
+  %p= key
+  %ul
+    - if [@json[key]].flatten.count < 2
+      %li= @json[key]
+    - else
+      - @json[key].each do |body|
+        %li= body
