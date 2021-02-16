@@ -1,0 +1,11 @@
+%h1
+  = @pokemon.id
+  = @pokemon.name
+
+%p Abilities
+
+%ul
+  - @pokemon.abilities.each do |ability|
+    %li
+      = ability["ability"]["name"]
+

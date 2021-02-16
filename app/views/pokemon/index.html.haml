@@ -7,9 +7,10 @@
 = link_to "Next", @pokemon_store.next_path
 
 - @pokemon_store.index.each do |pokemon|
+  - pokemon['id'] = pokemon['url'].gsub('v2','').match(/\d+/).to_s
   %h2
-    = pokemon['url'].gsub('v2','').match(/\d+/)
-    = pokemon['name'].capitalize
+    = link_to "#{pokemon['id']} #{pokemon['name'].capitalize}",
+      "/pokemon/" + pokemon['id']
 
 - if @pokemon_store.previous_path
   = link_to "Prev", @pokemon_store.previous_path

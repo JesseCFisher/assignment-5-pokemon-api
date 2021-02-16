@@ -6,4 +6,10 @@ class PokemonController < ApplicationController
     @pokemon_store = PokemonStore.new(@offset, @limit)
     @pokemons = @pokemon_store.index
   end
+
+  def show
+    @id = params[:id]
+    @pokemon = Pokemon.new(@id)
+  end
+
 end
