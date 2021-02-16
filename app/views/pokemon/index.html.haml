@@ -1,7 +1,7 @@
 %h1 Pokemon#index
-- @pokemons.each do |pokemon|
+- @pokemon_store.index.each do |pokemon|
   %h2= pokemon['name'].capitalize
 
-= link_to "Prev", @json["previous"]
+-# = link_to "Prev", @json["previous"]
 
-= link_to "Next", @json["next"]
+-# = link_to "Next", @json["next"]
